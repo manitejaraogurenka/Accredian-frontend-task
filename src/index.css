@@ -1,0 +1,21 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.Hero{
+    box-shadow: 0px 4px 50px 1px #00072b36;
+    border-radius: 29px;
+}
+
+.flip-vertical {
+    --transform-scale-y: -1;
+}
+
+.Table {
+    box-shadow: 0px 6px 20px 1px #00072b36;
+}
+
+.Shadow {
+    box-shadow: 0px 0px 15px 1px #00072b36;
+}
