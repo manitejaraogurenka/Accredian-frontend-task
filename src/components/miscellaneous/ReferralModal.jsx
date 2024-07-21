@@ -10,6 +10,7 @@ import {
   InputLabel,
   FormControl,
   IconButton,
+  CircularProgress,
 } from "@mui/material";
 import CloseIcon from "@mui/icons-material/Close";
 import { toast } from "react-hot-toast";
@@ -33,16 +34,26 @@ const ReferralModal = ({ open, onClose }) => {
     course: "",
   });
 
+  const [loading, setLoading] = useState(false);
+
   const handleChange = (event) => {
     setFormData({ ...formData, [event.target.name]: event.target.value });
   };
 
   const handleSubmit = async (event) => {
     event.preventDefault();
+    setLoading(true);
     try {
       const response = await submitReferral(formData);
       if (response.status === 200) {
         toast.success("Referral submitted successfully!");
+        setFormData({
+          referrerName: "",
+          referrerEmail: "",
+          refereeName: "",
+          refereeEmail: "",
+          course: "",
+        });
         onClose();
       } else {
         toast.error("Submission failed.");
@@ -50,6 +61,8 @@ const ReferralModal = ({ open, onClose }) => {
     } catch (error) {
       console.error("Error submitting referral:", error);
       toast.error("An error occurred. Please try again.");
+    } finally {
+      setLoading(false);
     }
   };
 
@@ -151,8 +164,9 @@ const ReferralModal = ({ open, onClose }) => {
             variant="contained"
             color="primary"
             sx={{ mt: 3, width: "100%", borderRadius: 2, fontSize: "1rem" }}
+            disabled={loading}
           >
-            Submit
+            {loading ? <CircularProgress size={24} /> : "Submit"}
           </Button>
         </form>
       </Box>
