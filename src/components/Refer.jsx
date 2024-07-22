@@ -5,7 +5,7 @@ const Refer = () => {
   const [modalOpen, setModalOpen] = useState(false);
 
   return (
-    <div className="flex flex-col items-center w-screen h-[90%] gap-4 bg-[#EEF5FF] mt-4 p-4">
+    <div className="flex flex-col items-center w-screen h-[90%] gap-4 bg-[#EEF5FF] mt-6 p-4">
       <h1 className="text-2xl font-semibold text-black text-center p-4">
         How Do I <span className="text-[#1A73E8]">Refer?</span>
       </h1>

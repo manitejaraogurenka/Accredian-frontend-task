@@ -46,7 +46,7 @@ const HeroSection = () => {
         ))}
       </nav>
       <section className="p-4 w-full md:px-28 h-fit">
-        <div className="relative flex flex-col lg:flex-row items-center justify-between bg-[#EEF5FF] mt-5 overflow-hidden z-10">
+        <div className="relative flex flex-col lg:flex-row items-center justify-between bg-[#EEF5FF] mt-5 overflow-hidden z-10 rounded-3xl Hero">
           <div className="flex flex-col items-start gap-4 xl:gap-6 p-10 xl:pb-20">
             <h1 className="font-Roboto font-bold text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-[5.5rem]">
               Let's Learn <br className="hidden lg:block" /> & Earn
